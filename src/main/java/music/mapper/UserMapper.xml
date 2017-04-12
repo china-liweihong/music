@@ -3,7 +3,6 @@
 <mapper namespace="music.mapper.UserMapper">
 <!-- 自定义返回结果集 -->
    <resultMap id="userMap" type="UserBean">
-        <id property="id" column="id" javaType="java.lang.Integer"></id>
         <result property="username" column="username" javaType="java.lang.String"></result>
         <result property="password" column="password" javaType="java.lang.String"></result>
     </resultMap>
@@ -14,7 +13,7 @@
 <!--#{}中的内容，为占位符，当参数为某个JavaBean时，表示放置该Bean对象的属性值  -->
 
 
-    <insert id="insertUser" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insertUser" useGeneratedKeys="true" keyProperty="username">
         insert into m_user (username,password) values (#{username},#{password})
     </insert>
     

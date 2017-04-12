@@ -10,26 +10,19 @@ public class UserBean implements Serializable {
 	 *  @time 2017-02-18
 	 */
 	private static final long serialVersionUID = 1L;
-	private Integer id;
 	private String username;
 	private String password;
+	private int type;
 	
 	public UserBean(){
 		//默认
 	}
 	
 	public UserBean(String username,String password){
-		this.id = id;
 		this.username = username;
 		this.password = password;
 	}
 	
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
 	public String getUsername() {
 		return username;
 	}
@@ -46,7 +39,7 @@ public class UserBean implements Serializable {
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return "UserBean[id,username,password] = [" + this.id + "," + 
+		return "UserBean[type,username,password] = [" + this.type + "," + 
 					this.username + "," + this.password +"]";
 	}
 

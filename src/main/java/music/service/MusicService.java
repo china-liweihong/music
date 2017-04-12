@@ -4,29 +4,31 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import music.beans.MusicBean;
 import music.beans.UserBean;
+import music.mapper.MusicMapper;
 import music.mapper.UserMapper;
 import music.tools.DBTools;
 import music.tools.Utils;
 
-public class UserService {
+public class MusicService {
 
     public static void main(String[] args) {
-          /*UserService us = new UserService();
-          us.deleteUser("灿杰");*/
+         MusicService ms  = new MusicService();
+         
+         ms.deleteMusic("一纸流年");
     }
 
     
     /**
      * 新增用户, 密码使用md5 加密
      */
-    public  void insertUser(String username,String password) {
+    public  void insertMusic(MusicBean mb) {
         SqlSession session = DBTools.getSession();
-        UserMapper mapper = session.getMapper(UserMapper.class);
-        UserBean user = new UserBean(username,Utils.getMD5(password));
+        MusicMapper mapper = session.getMapper(MusicMapper.class);
         try {
-            mapper.insertUser(user);
-            System.out.println(user.toString());
+            mapper.insertMusic(mb);
+            System.out.println(mb.toString());
              session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,11 +40,11 @@ public class UserService {
     /**
      * 删除用户
      */
-    public void deleteUser(String username){
+    public void deleteMusic(String musicname){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        MusicMapper mapper=session.getMapper(MusicMapper.class);
         try {
-            mapper.deleteUser(username);
+            mapper.deleteMusic(musicname);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -54,12 +56,12 @@ public class UserService {
     /**
      * 根据id查询用户
      */
-    public void selectUserByUsername(String username){
+    public void selectMusicByMusicname(String musicname){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        MusicMapper mapper=session.getMapper(MusicMapper.class);
         try {
-        UserBean user=    mapper.selectUserByUsername(username);
-        System.out.println(user.toString());
+        MusicBean music=    mapper.selectMusicByMusicname(musicname);
+        System.out.println(music.toString());
             
             session.commit();
         } catch (Exception e) {
@@ -71,12 +73,12 @@ public class UserService {
     /**
      * 查询所有的用户
      */
-    public void selectAllUser(){
+    public void selectAllMusic(){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        MusicMapper mapper=session.getMapper(MusicMapper.class);
         try {
-        List<UserBean> user=mapper.selectAllUser();
-        System.out.println(user.toString());
+        List<MusicBean> music=mapper.selectAllMusic();
+        System.out.println(music.toString());
         session.commit();
         } catch (Exception e) {
             e.printStackTrace();

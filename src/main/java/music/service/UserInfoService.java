@@ -4,29 +4,30 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
-import music.beans.UserBean;
-import music.mapper.UserMapper;
+import music.beans.UserInfoBean;
+import music.mapper.UserInfoMapper;
 import music.tools.DBTools;
-import music.tools.Utils;
 
-public class UserService {
+public class UserInfoService {
 
     public static void main(String[] args) {
-          /*UserService us = new UserService();
-          us.deleteUser("灿杰");*/
+         UserInfoService us = new UserInfoService();
+         
+         UserInfoBean userinfo = new UserInfoBean("灿杰",24,"男","北京理工大学珠海学院","客色青青柳色轻","null",1);
+         
+         us.deleteUserInfo("灿杰");
     }
 
     
     /**
-     * 新增用户, 密码使用md5 加密
+     * 新增用户信息
      */
-    public  void insertUser(String username,String password) {
+    public  void insertUserInfo(UserInfoBean userinfo) {
         SqlSession session = DBTools.getSession();
-        UserMapper mapper = session.getMapper(UserMapper.class);
-        UserBean user = new UserBean(username,Utils.getMD5(password));
+        UserInfoMapper mapper = session.getMapper(UserInfoMapper.class);
         try {
-            mapper.insertUser(user);
-            System.out.println(user.toString());
+            mapper.insertUserInfo(userinfo);
+            System.out.println(userinfo.toString());
              session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -38,11 +39,11 @@ public class UserService {
     /**
      * 删除用户
      */
-    public void deleteUser(String username){
+    public void deleteUserInfo(String username){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        UserInfoMapper mapper=session.getMapper(UserInfoMapper.class);
         try {
-            mapper.deleteUser(username);
+            mapper.deleteUserInfo(username);
             session.commit();
         } catch (Exception e) {
             e.printStackTrace();
@@ -56,9 +57,9 @@ public class UserService {
      */
     public void selectUserByUsername(String username){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        UserInfoMapper mapper=session.getMapper(UserInfoMapper.class);
         try {
-        UserBean user=    mapper.selectUserByUsername(username);
+        UserInfoBean user=    mapper.selectUserByUsername(username);
         System.out.println(user.toString());
             
             session.commit();
@@ -71,11 +72,11 @@ public class UserService {
     /**
      * 查询所有的用户
      */
-    public void selectAllUser(){
+    public void selectAllUserInfo(){
         SqlSession session=DBTools.getSession();
-        UserMapper mapper=session.getMapper(UserMapper.class);
+        UserInfoMapper mapper=session.getMapper(UserInfoMapper.class);
         try {
-        List<UserBean> user=mapper.selectAllUser();
+        List<UserInfoBean> user=mapper.selectAllUserInfo();
         System.out.println(user.toString());
         session.commit();
         } catch (Exception e) {

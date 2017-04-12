@@ -43,12 +43,12 @@ public class UserRegisterImp implements UserRegisterI{
 		return result;
 	}
 
-	/*public static void main(String[] args){
+	public static void main(String[] args){
 		UserBean user = new UserBean("灿杰","123456");
 		UserRegisterImp uri = new UserRegisterImp();
 		LoginOrRegMessage.Builder lr = uri.register(user);
 		System.out.println(lr.getStatus());
 		System.out.println(lr.getMessage());
 	
-	}*/
+	}
 }

@@ -2,18 +2,17 @@ package music.mapper;
 
 import java.util.List;
 
-import music.beans.UserBean;
+import music.beans.UserInfoBean;
 
 
-
-public interface UserMapper {
-    /**
+public interface UserInfoMapper {
+	   /**
      * 新增用戶
      * @param user
      * @return
      * @throws Exception
      */
-    public int insertUser(UserBean user) throws Exception;
+    public int insertUserInfo(UserInfoBean user) throws Exception;
     /**
      * 修改用戶
      * @param user
@@ -21,25 +20,25 @@ public interface UserMapper {
      * @return
      * @throws Exception
      */
-    public int updateUser (UserBean user) throws Exception;
+    public int updateUserInfo (UserInfoBean user) throws Exception;
      /**
       * 刪除用戶
       * @param username
       * @return
       * @throws Exception
       */
-    public int deleteUser(String username) throws Exception;
+    public int deleteUserInfo (String username) throws Exception;
     /**
      * 根据id查询用户信息
      * @param id
      * @return
      * @throws Exception
      */
-    public UserBean selectUserByUsername(String username) throws Exception;
+    public UserInfoBean selectUserByUsername(String username) throws Exception;
      /**
       * 查询所有的用户信息
       * @return
       * @throws Exception
       */
-    public List<UserBean> selectAllUser() throws Exception;
+    public List<UserInfoBean> selectAllUserInfo() throws Exception;
 }
