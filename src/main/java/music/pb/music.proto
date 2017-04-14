@@ -1,12 +1,24 @@
 /**
-*	@description 定义一些通信协议(格式)
+*  @description 定义一些通信协议(格式)
 *  @author canjie
 *  @time 2017-02-18
 */
 
 package music.pb;
 
+//定义登陆注册返回信息
 message LoginOrRegMessage{
 	optional int32 status = 1;
 	optional string message = 2;
 }
+
+
+//定义埋点采集信息
+message BuriedPoint{
+	optional int32 eId = 1; //事件Id
+	optional string eType = 2; //事件类型
+	optional string eMsg = 3;  //事件信息
+	optional string username = 4; //who target the event
+}
+
+

@@ -37,6 +37,10 @@ public final class Music {
   }
   /**
    * Protobuf type {@code music.pb.LoginOrRegMessage}
+   *
+   * <pre>
+   *定义登陆注册返回信息
+   * </pre>
    */
   public static final class LoginOrRegMessage extends
       com.google.protobuf.GeneratedMessage implements
@@ -315,6 +319,10 @@ public final class Music {
     }
     /**
      * Protobuf type {@code music.pb.LoginOrRegMessage}
+     *
+     * <pre>
+     *定义登陆注册返回信息
+     * </pre>
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
@@ -562,11 +570,1068 @@ public final class Music {
     // @@protoc_insertion_point(class_scope:music.pb.LoginOrRegMessage)
   }
 
+  public interface BuriedPointOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:music.pb.BuriedPoint)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 eId = 1;</code>
+     *
+     * <pre>
+     *事件Id
+     * </pre>
+     */
+    boolean hasEId();
+    /**
+     * <code>optional int32 eId = 1;</code>
+     *
+     * <pre>
+     *事件Id
+     * </pre>
+     */
+    int getEId();
+
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    boolean hasEType();
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    java.lang.String getEType();
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getETypeBytes();
+
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    boolean hasEMsg();
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    java.lang.String getEMsg();
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getEMsgBytes();
+
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    boolean hasUsername();
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    java.lang.String getUsername();
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    com.google.protobuf.ByteString
+        getUsernameBytes();
+  }
+  /**
+   * Protobuf type {@code music.pb.BuriedPoint}
+   *
+   * <pre>
+   *定义埋点采集信息
+   * </pre>
+   */
+  public static final class BuriedPoint extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:music.pb.BuriedPoint)
+      BuriedPointOrBuilder {
+    // Use BuriedPoint.newBuilder() to construct.
+    private BuriedPoint(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+      this.unknownFields = builder.getUnknownFields();
+    }
+    private BuriedPoint(boolean noInit) { this.unknownFields = com.google.protobuf.UnknownFieldSet.getDefaultInstance(); }
+
+    private static final BuriedPoint defaultInstance;
+    public static BuriedPoint getDefaultInstance() {
+      return defaultInstance;
+    }
+
+    public BuriedPoint getDefaultInstanceForType() {
+      return defaultInstance;
+    }
+
+    private final com.google.protobuf.UnknownFieldSet unknownFields;
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+        getUnknownFields() {
+      return this.unknownFields;
+    }
+    private BuriedPoint(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      initFields();
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!parseUnknownField(input, unknownFields,
+                                     extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+              bitField0_ |= 0x00000001;
+              eId_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000002;
+              eType_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000004;
+              eMsg_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+              bitField0_ |= 0x00000008;
+              username_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e.getMessage()).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return music.pb.Music.internal_static_music_pb_BuriedPoint_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return music.pb.Music.internal_static_music_pb_BuriedPoint_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              music.pb.Music.BuriedPoint.class, music.pb.Music.BuriedPoint.Builder.class);
+    }
+
+    public static com.google.protobuf.Parser<BuriedPoint> PARSER =
+        new com.google.protobuf.AbstractParser<BuriedPoint>() {
+      public BuriedPoint parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return new BuriedPoint(input, extensionRegistry);
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<BuriedPoint> getParserForType() {
+      return PARSER;
+    }
+
+    private int bitField0_;
+    public static final int EID_FIELD_NUMBER = 1;
+    private int eId_;
+    /**
+     * <code>optional int32 eId = 1;</code>
+     *
+     * <pre>
+     *事件Id
+     * </pre>
+     */
+    public boolean hasEId() {
+      return ((bitField0_ & 0x00000001) == 0x00000001);
+    }
+    /**
+     * <code>optional int32 eId = 1;</code>
+     *
+     * <pre>
+     *事件Id
+     * </pre>
+     */
+    public int getEId() {
+      return eId_;
+    }
+
+    public static final int ETYPE_FIELD_NUMBER = 2;
+    private java.lang.Object eType_;
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    public boolean hasEType() {
+      return ((bitField0_ & 0x00000002) == 0x00000002);
+    }
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    public java.lang.String getEType() {
+      java.lang.Object ref = eType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          eType_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string eType = 2;</code>
+     *
+     * <pre>
+     *事件类型
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getETypeBytes() {
+      java.lang.Object ref = eType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int EMSG_FIELD_NUMBER = 3;
+    private java.lang.Object eMsg_;
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    public boolean hasEMsg() {
+      return ((bitField0_ & 0x00000004) == 0x00000004);
+    }
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    public java.lang.String getEMsg() {
+      java.lang.Object ref = eMsg_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          eMsg_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string eMsg = 3;</code>
+     *
+     * <pre>
+     *事件信息
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getEMsgBytes() {
+      java.lang.Object ref = eMsg_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eMsg_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERNAME_FIELD_NUMBER = 4;
+    private java.lang.Object username_;
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    public boolean hasUsername() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    public java.lang.String getUsername() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          username_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string username = 4;</code>
+     *
+     * <pre>
+     *who target the event
+     * </pre>
+     */
+    public com.google.protobuf.ByteString
+        getUsernameBytes() {
+      java.lang.Object ref = username_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        username_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private void initFields() {
+      eId_ = 0;
+      eType_ = "";
+      eMsg_ = "";
+      username_ = "";
+    }
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getSerializedSize();
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        output.writeInt32(1, eId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        output.writeBytes(2, getETypeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        output.writeBytes(3, getEMsgBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeBytes(4, getUsernameBytes());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) == 0x00000001)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, eId_);
+      }
+      if (((bitField0_ & 0x00000002) == 0x00000002)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getETypeBytes());
+      }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getEMsgBytes());
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getUsernameBytes());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    @java.lang.Override
+    protected java.lang.Object writeReplace()
+        throws java.io.ObjectStreamException {
+      return super.writeReplace();
+    }
+
+    public static music.pb.Music.BuriedPoint parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static music.pb.Music.BuriedPoint parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static music.pb.Music.BuriedPoint parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static music.pb.Music.BuriedPoint parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public static Builder newBuilder() { return Builder.create(); }
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder(music.pb.Music.BuriedPoint prototype) {
+      return newBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() { return newBuilder(this); }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code music.pb.BuriedPoint}
+     *
+     * <pre>
+     *定义埋点采集信息
+     * </pre>
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:music.pb.BuriedPoint)
+        music.pb.Music.BuriedPointOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return music.pb.Music.internal_static_music_pb_BuriedPoint_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return music.pb.Music.internal_static_music_pb_BuriedPoint_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                music.pb.Music.BuriedPoint.class, music.pb.Music.BuriedPoint.Builder.class);
+      }
+
+      // Construct using music.pb.Music.BuriedPoint.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      private static Builder create() {
+        return new Builder();
+      }
+
+      public Builder clear() {
+        super.clear();
+        eId_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000001);
+        eType_ = "";
+        bitField0_ = (bitField0_ & ~0x00000002);
+        eMsg_ = "";
+        bitField0_ = (bitField0_ & ~0x00000004);
+        username_ = "";
+        bitField0_ = (bitField0_ & ~0x00000008);
+        return this;
+      }
+
+      public Builder clone() {
+        return create().mergeFrom(buildPartial());
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return music.pb.Music.internal_static_music_pb_BuriedPoint_descriptor;
+      }
+
+      public music.pb.Music.BuriedPoint getDefaultInstanceForType() {
+        return music.pb.Music.BuriedPoint.getDefaultInstance();
+      }
+
+      public music.pb.Music.BuriedPoint build() {
+        music.pb.Music.BuriedPoint result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public music.pb.Music.BuriedPoint buildPartial() {
+        music.pb.Music.BuriedPoint result = new music.pb.Music.BuriedPoint(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) == 0x00000001)) {
+          to_bitField0_ |= 0x00000001;
+        }
+        result.eId_ = eId_;
+        if (((from_bitField0_ & 0x00000002) == 0x00000002)) {
+          to_bitField0_ |= 0x00000002;
+        }
+        result.eType_ = eType_;
+        if (((from_bitField0_ & 0x00000004) == 0x00000004)) {
+          to_bitField0_ |= 0x00000004;
+        }
+        result.eMsg_ = eMsg_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.username_ = username_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof music.pb.Music.BuriedPoint) {
+          return mergeFrom((music.pb.Music.BuriedPoint)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(music.pb.Music.BuriedPoint other) {
+        if (other == music.pb.Music.BuriedPoint.getDefaultInstance()) return this;
+        if (other.hasEId()) {
+          setEId(other.getEId());
+        }
+        if (other.hasEType()) {
+          bitField0_ |= 0x00000002;
+          eType_ = other.eType_;
+          onChanged();
+        }
+        if (other.hasEMsg()) {
+          bitField0_ |= 0x00000004;
+          eMsg_ = other.eMsg_;
+          onChanged();
+        }
+        if (other.hasUsername()) {
+          bitField0_ |= 0x00000008;
+          username_ = other.username_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        music.pb.Music.BuriedPoint parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (music.pb.Music.BuriedPoint) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private int eId_ ;
+      /**
+       * <code>optional int32 eId = 1;</code>
+       *
+       * <pre>
+       *事件Id
+       * </pre>
+       */
+      public boolean hasEId() {
+        return ((bitField0_ & 0x00000001) == 0x00000001);
+      }
+      /**
+       * <code>optional int32 eId = 1;</code>
+       *
+       * <pre>
+       *事件Id
+       * </pre>
+       */
+      public int getEId() {
+        return eId_;
+      }
+      /**
+       * <code>optional int32 eId = 1;</code>
+       *
+       * <pre>
+       *事件Id
+       * </pre>
+       */
+      public Builder setEId(int value) {
+        bitField0_ |= 0x00000001;
+        eId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 eId = 1;</code>
+       *
+       * <pre>
+       *事件Id
+       * </pre>
+       */
+      public Builder clearEId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        eId_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eType_ = "";
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public boolean hasEType() {
+        return ((bitField0_ & 0x00000002) == 0x00000002);
+      }
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public java.lang.String getEType() {
+        java.lang.Object ref = eType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            eType_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getETypeBytes() {
+        java.lang.Object ref = eType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          eType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public Builder setEType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        eType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public Builder clearEType() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        eType_ = getDefaultInstance().getEType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string eType = 2;</code>
+       *
+       * <pre>
+       *事件类型
+       * </pre>
+       */
+      public Builder setETypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000002;
+        eType_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object eMsg_ = "";
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public boolean hasEMsg() {
+        return ((bitField0_ & 0x00000004) == 0x00000004);
+      }
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public java.lang.String getEMsg() {
+        java.lang.Object ref = eMsg_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            eMsg_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getEMsgBytes() {
+        java.lang.Object ref = eMsg_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          eMsg_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public Builder setEMsg(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        eMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public Builder clearEMsg() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        eMsg_ = getDefaultInstance().getEMsg();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string eMsg = 3;</code>
+       *
+       * <pre>
+       *事件信息
+       * </pre>
+       */
+      public Builder setEMsgBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000004;
+        eMsg_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object username_ = "";
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public boolean hasUsername() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public java.lang.String getUsername() {
+        java.lang.Object ref = username_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            username_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public com.google.protobuf.ByteString
+          getUsernameBytes() {
+        java.lang.Object ref = username_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          username_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public Builder setUsername(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        username_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public Builder clearUsername() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        username_ = getDefaultInstance().getUsername();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string username = 4;</code>
+       *
+       * <pre>
+       *who target the event
+       * </pre>
+       */
+      public Builder setUsernameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000008;
+        username_ = value;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:music.pb.BuriedPoint)
+    }
+
+    static {
+      defaultInstance = new BuriedPoint(true);
+      defaultInstance.initFields();
+    }
+
+    // @@protoc_insertion_point(class_scope:music.pb.BuriedPoint)
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_music_pb_LoginOrRegMessage_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_music_pb_LoginOrRegMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_music_pb_BuriedPoint_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_music_pb_BuriedPoint_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -577,7 +1642,9 @@ public final class Music {
   static {
     java.lang.String[] descriptorData = {
       "\n\013music.proto\022\010music.pb\"4\n\021LoginOrRegMes" +
-      "sage\022\016\n\006status\030\001 \001(\005\022\017\n\007message\030\002 \001(\t"
+      "sage\022\016\n\006status\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\"I\n" +
+      "\013BuriedPoint\022\013\n\003eId\030\001 \001(\005\022\r\n\005eType\030\002 \001(\t" +
+      "\022\014\n\004eMsg\030\003 \001(\t\022\020\n\010username\030\004 \001(\t"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -597,6 +1664,12 @@ public final class Music {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_music_pb_LoginOrRegMessage_descriptor,
         new java.lang.String[] { "Status", "Message", });
+    internal_static_music_pb_BuriedPoint_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_music_pb_BuriedPoint_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_music_pb_BuriedPoint_descriptor,
+        new java.lang.String[] { "EId", "EType", "EMsg", "Username", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
