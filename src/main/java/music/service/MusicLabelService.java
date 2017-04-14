@@ -20,7 +20,7 @@ public class MusicLabelService {
          
          MusicLabelBean ml = new MusicLabelBean("一纸流年","古墨","国语","古风","江湖","飘逸","古风");
          
-         ms.deleteMusicLabel("一纸流年");
+         ms.insertMusicLabel(ml);
     }
 
     
