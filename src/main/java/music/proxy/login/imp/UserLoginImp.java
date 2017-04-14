@@ -56,6 +56,11 @@ public class UserLoginImp implements UserLoginI,SetCookie{
 		}else{
 			result.setStatus(1);
 			result.setMessage("登陆成功！");
+			
+			//保存状态
+			String cookie = Utils.getMD5(user.getUsername() + Math.random());
+			int expire = 3600 * 3;
+			this.setCookie(user.getUsername(), cookie, expire);
 		}
 		return result;
 	}
