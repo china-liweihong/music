@@ -55,11 +55,12 @@ public class UserInfoService {
     /**
      * 根据id查询用户
      */
-    public void selectUserByUsername(String username){
+    public UserInfoBean selectUserByUsername(String username){
+    	UserInfoBean user = null;
         SqlSession session=DBTools.getSession();
         UserInfoMapper mapper=session.getMapper(UserInfoMapper.class);
         try {
-        UserInfoBean user=    mapper.selectUserByUsername(username);
+        user =    mapper.selectUserByUsername(username);
         System.out.println(user.toString());
             
             session.commit();
@@ -67,6 +68,7 @@ public class UserInfoService {
             e.printStackTrace();
             session.rollback();
         }
+        return user;
     }
     
     /**

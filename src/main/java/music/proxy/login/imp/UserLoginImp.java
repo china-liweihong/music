@@ -58,7 +58,7 @@ public class UserLoginImp implements UserLoginI,SetCookie{
 			result.setMessage("登陆成功！");
 			
 			//保存状态
-			String cookie = Utils.getMD5(user.getUsername() + Math.random());
+			String cookie = Utils.getMD5(user.getUsername() + "#1");
 			int expire = 3600 * 3;
 			this.setCookie(user.getUsername(), cookie, expire);
 		}

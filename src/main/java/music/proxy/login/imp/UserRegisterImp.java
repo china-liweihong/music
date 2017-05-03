@@ -39,6 +39,7 @@ public class UserRegisterImp implements UserRegisterI{
 			us.insertUser(user.getUsername(), user.getPassword());
 			result.setStatus(1);
 			result.setMessage("注册用户成功");
+			
 		}
 		return result;
 	}
