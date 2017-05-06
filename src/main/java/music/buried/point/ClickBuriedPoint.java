@@ -32,5 +32,9 @@ public class ClickBuriedPoint implements ReciverI{
 		}
 		this.redis.hset("click_buriedpoint", username, oldEvent);
 	}
+	
+	public String get(String username){
+		return this.redis.hget("click_buriedpoint", username);
+	}
 
 }

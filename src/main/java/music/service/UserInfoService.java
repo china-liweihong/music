@@ -74,17 +74,19 @@ public class UserInfoService {
     /**
      * 查询所有的用户
      */
-    public void selectAllUserInfo(){
+    public List<UserInfoBean>  selectAllUserInfo(){
         SqlSession session=DBTools.getSession();
         UserInfoMapper mapper=session.getMapper(UserInfoMapper.class);
+        List<UserInfoBean> user = null;
         try {
-        List<UserInfoBean> user=mapper.selectAllUserInfo();
+        user =mapper.selectAllUserInfo();
         System.out.println(user.toString());
         session.commit();
         } catch (Exception e) {
             e.printStackTrace();
             session.rollback();
         }
+        return user;
     }
     
 }

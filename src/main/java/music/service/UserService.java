@@ -15,6 +15,24 @@ public class UserService {
           /*UserService us = new UserService();
           us.deleteUser("灿杰");*/
     }
+    
+    
+    /**
+     * update
+     */
+    public void updateUser(String username,String password){
+    	  SqlSession session = DBTools.getSession();
+          UserMapper mapper = session.getMapper(UserMapper.class);
+          UserBean user = new UserBean(username,Utils.getMD5(password));
+          try {
+              mapper.updateUser(user);
+              System.out.println(user.toString());
+               session.commit();
+          } catch (Exception e) {
+              e.printStackTrace();
+              session.rollback();
+          }
+    }
 
     
     /**
@@ -71,17 +89,19 @@ public class UserService {
     /**
      * 查询所有的用户
      */
-    public void selectAllUser(){
+    public List<UserBean> selectAllUser(){
         SqlSession session=DBTools.getSession();
         UserMapper mapper=session.getMapper(UserMapper.class);
+        List<UserBean> user = null;
         try {
-        List<UserBean> user=mapper.selectAllUser();
+        user=mapper.selectAllUser();
         System.out.println(user.toString());
         session.commit();
         } catch (Exception e) {
             e.printStackTrace();
             session.rollback();
         }
+        return user;
     }
     
 }

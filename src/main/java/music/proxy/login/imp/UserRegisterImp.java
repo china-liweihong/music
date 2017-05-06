@@ -43,6 +43,17 @@ public class UserRegisterImp implements UserRegisterI{
 		}
 		return result;
 	}
+	
+	public LoginOrRegMessage.Builder updatePass(UserBean user) {
+		// TODO Auto-generated method stub
+		LoginOrRegMessage.Builder result = LoginOrRegMessage.newBuilder();
+		UserService us = new UserService();
+		us.updateUser (user.getUsername(), user.getPassword());
+		result.setStatus(1);
+		result.setMessage("注册用户成功");
+			
+		return result;
+	}
 
 	public static void main(String[] args){
 		UserBean user = new UserBean("灿杰","123456");
