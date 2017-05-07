@@ -1,5 +1,8 @@
 package music.behavior;
 
+import java.util.ArrayList;
+import java.util.Map;
+
 import music.tools.RedisUtils;
 
 /**
@@ -32,6 +35,11 @@ public class MusicPlayNum {
 	
 	public String get(String musicname){
 		return this.redis.hget("musicplaynum", musicname);
+	}
+	
+	//获取全部
+	public Map<String,String> getall(){
+		return this.redis.hgetall("musicplaynum");
 	}
 	
 
